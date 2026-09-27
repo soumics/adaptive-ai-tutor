@@ -1,0 +1,463 @@
+{
+  "subject": "controls",
+  "provider": "ollama/qwen3.5:4b",
+  "timings_s": {
+    "ingest_and_index": 0.03,
+    "question_bank": 0.0,
+    "diagnostic": 0.01,
+    "tutor": 4.41,
+    "socratic": 8.77,
+    "quiz": 0.74
+  },
+  "topics": [
+    {
+      "topic": "1 Open-Loop and Closed-Loop Control",
+      "requires": "-",
+      "found_by": "-"
+    },
+    {
+      "topic": "2 First-Order Systems and the Time Constant",
+      "requires": "1 Open-Loop and Closed-Loop Control",
+      "found_by": "explicit"
+    },
+    {
+      "topic": "3 Stability and Poles",
+      "requires": "2 First-Order Systems and the Time Constant",
+      "found_by": "explicit"
+    },
+    {
+      "topic": "4 PID Control",
+      "requires": "1 Open-Loop and Closed-Loop Control; 3 Stability and Poles",
+      "found_by": "explicit"
+    },
+    {
+      "topic": "5 Consensus in Multi-Agent Systems",
+      "requires": "3 Stability and Poles",
+      "found_by": "explicit"
+    }
+  ],
+  "bank": {
+    "kept": 37,
+    "by_kind": {
+      "mcq": 30,
+      "short": 7
+    },
+    "rejected": 7,
+    "rejected_reasons": {
+      "failed the independent answer check": 2,
+      "refers to 'the passage' or a source label instead of being self-contained": 1,
+      "rubric not grounded in the passages or not met by the model answer": 3,
+      "near-duplicate of a kept question": 1
+    },
+    "errors": 0
+  },
+  "diagnostic": {
+    "questions": 8,
+    "overall": "intermediate",
+    "start_topic": "3 Stability and Poles",
+    "simulated_learner_knows": [
+      "1 Open-Loop and Closed-Loop Control",
+      "2 First-Order Systems and the Time Constant"
+    ],
+    "topics": {
+      "1 Open-Loop and Closed-Loop Control": "mastered",
+      "2 First-Order Systems and the Time Constant": "mastered",
+      "3 Stability and Poles": "not yet",
+      "4 PID Control": "not yet",
+      "5 Consensus in Multi-Agent Systems": "not yet"
+    }
+  },
+  "tutor": [
+    {
+      "question": "Why does a P controller leave a steady-state error, and what removes it?",
+      "answer": "A Proportional (P) controller calculates its input based only on the current error, meaning it cannot completely eliminate the error for a constant reference [S1]. This happens because the controller stops adding force once the error becomes very small, leaving a \"steady-state error\" that remains after the system settles [S1]. The Integral (I) term removes this error by reacting to the accumulated past error; as long as any error exists, the integral keeps growing until it produces enough input to make the error zero [S1].",
+      "citations": [
+        "Feedback Control Basics, \u00a74 PID Control"
+      ],
+      "grounded": true,
+      "fallback": false,
+      "abstained": false,
+      "attempts": 1,
+      "seconds": 2.1
+    },
+    {
+      "question": "What does the second-smallest eigenvalue of the Laplacian tell us?",
+      "answer": "The second-smallest eigenvalue of the graph Laplacian is called the algebraic connectivity or Fiedler value [S2]. This value determines how fast the agents in a group agree on a common value [S1]. A larger value means the graph is better connected and the agreement happens faster [S1]. If this value is zero, the graph is not connected and the groups will never agree with each other [S2].\n\nFor example, if you have three robots trying to agree on a meeting time, a large algebraic connectivity means they will reach that time quickly because their communication links are strong [S1].",
+      "citations": [
+        "Feedback Control Basics, \u00a75 Consensus in Multi-Agent Systems",
+        "Feedback Control Basics, \u00a75 Consensus in Multi-Agent Systems"
+      ],
+      "grounded": true,
+      "fallback": false,
+      "abstained": false,
+      "attempts": 1,
+      "seconds": 2.3
+    }
+  ],
+  "socratic": {
+    "question": "What does the time constant of a first-order system tell me?",
+    "turns": [
+      {
+        "who": "tutor",
+        "text": "Welcome! It's great that you're asking about the time constant, a fundamental concept in understanding how systems respond to changes.\n\nCan you explain what happens to the output of a first-order system after exactly one time constant (\u03c4) has passed following a sudden input change? (Look at [S2].)",
+        "cites": [
+          "Feedback Control Basics, \u00a72 First-Order Systems and the Time Constant"
+        ],
+        "cite_added": true
+      },
+      {
+        "who": "learner",
+        "text": "How fast it responds?",
+        "cites": [],
+        "cite_added": false
+      },
+      {
+        "who": "tutor",
+        "text": "You are on the right track by connecting the time constant to the speed of response, but you haven't yet specified exactly what percentage of the change occurs at t = \u03c4.\n\nAccording to the sources, what specific percentage of the total change does the output reach after exactly one time constant (\u03c4)? (Look at [S1].)",
+        "cites": [
+          "Feedback Control Basics, \u00a72 First-Order Systems and the Time Constant"
+        ],
+        "cite_added": true
+      },
+      {
+        "who": "learner",
+        "text": "At t = tau the output is at about 63 percent of the final value.",
+        "cites": [],
+        "cite_added": false
+      },
+      {
+        "who": "tutor",
+        "text": "That is exactly right; the output reaches approximately 63.2% of its total change after one time constant [S1].\n\nNow, how does this specific percentage help you determine the settling time from your measured step response data?",
+        "cites": [
+          "Feedback Control Basics, \u00a72 First-Order Systems and the Time Constant"
+        ],
+        "cite_added": false
+      }
+    ],
+    "ended": false
+  },
+  "quiz": [
+    {
+      "kind": "mcq",
+      "question": "What condition must all poles of a continuous-time linear system satisfy for it to be stable?",
+      "response": "3",
+      "score": 1.0,
+      "quality": 4,
+      "feedback": "Correct. The material says: 'A continuous-time linear system is stable if and only if all its poles have strictly negative real parts'. (Source: Feedback Control Basics, \u00a73 Stability and Poles)",
+      "points": []
+    },
+    {
+      "kind": "mcq",
+      "question": "What characteristic do poles with a positive real part cause in a system's response?",
+      "response": "0",
+      "score": 0.0,
+      "quality": 1,
+      "feedback": "Not quite: the answer is D) The response grows without bound.. The material says: 'A pole with a positive real part makes the response grow without bound: the system is unstable'. (Source: Feedback Control Basics, \u00a73 Stability and Poles)",
+      "points": []
+    },
+    {
+      "kind": "mcq",
+      "question": "Under what condition is a continuous-time linear system classified as stable?",
+      "response": "0",
+      "score": 1.0,
+      "quality": 4,
+      "feedback": "Correct. states that a continuous-time linear system is stable if and only if all its poles have strictly negative real parts, meaning they lie in the left half of the complex plane. (Source: Feedback Control Basics, \u00a73 Stability and Poles)",
+      "points": []
+    },
+    {
+      "kind": "short",
+      "question": "What specific condition regarding the real parts of the poles determines if a continuous-time linear system is stable?",
+      "response": "A continuous-time linear system is stable if and only if all its poles have strictly negative real parts.",
+      "score": 1.0,
+      "quality": 5,
+      "feedback": "Score 100%.\n\u2713 The term 'strictly',\nModel answer: A continuous-time linear system is stable if and only if all its poles have strictly negative real parts. (Source: Feedback Control Basics, \u00a73 Stability and Poles)",
+      "points": [
+        {
+          "point": "The term 'strictly',",
+          "met": true,
+          "method": "keyword"
+        }
+      ]
+    },
+    {
+      "kind": "short",
+      "question": "What is the mathematical equation used to find the location of the closed-loop poles?",
+      "response": "I think it has something to do with the size of the numbers.",
+      "score": 0.0,
+      "quality": 0,
+      "feedback": "Score 0%.\n\u2717 The equation itself, as stated in the text.\nModel answer: 1 + C(s)G(s) = 0 (Source: Feedback Control Basics, \u00a73 Stability and Poles)",
+      "points": [
+        {
+          "point": "The equation itself, as stated in the text.",
+          "met": false,
+          "method": "none"
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "day": 1,
+      "qid": "controls-unit:s01:2a42ef38e6",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 1,
+      "qid": "controls-unit:s01:ff0e07156c",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 1,
+      "qid": "controls-unit:s02:61e74451ea",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 1,
+      "qid": "controls-unit:s02:97ee83a1ed",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 1,
+      "qid": "controls-unit:s03:764a529628",
+      "correct": false,
+      "next_interval_days": 1
+    },
+    {
+      "day": 1,
+      "qid": "controls-unit:s03:8cfeb8f16c",
+      "correct": false,
+      "next_interval_days": 1
+    },
+    {
+      "day": 1,
+      "qid": "controls-unit:s03:96acdb42d4",
+      "correct": false,
+      "next_interval_days": 1
+    },
+    {
+      "day": 1,
+      "qid": "controls-unit:s03:b9f98585ea",
+      "correct": false,
+      "next_interval_days": 1
+    },
+    {
+      "day": 1,
+      "qid": "controls-unit:s03:e16b77041a",
+      "correct": false,
+      "next_interval_days": 1
+    },
+    {
+      "day": 1,
+      "qid": "controls-unit:s04:8ed97fd343",
+      "correct": false,
+      "next_interval_days": 1
+    },
+    {
+      "day": 1,
+      "qid": "controls-unit:s05:0d11173ce3",
+      "correct": false,
+      "next_interval_days": 1
+    },
+    {
+      "day": 2,
+      "qid": "controls-unit:s03:764a529628",
+      "correct": true,
+      "next_interval_days": 1
+    },
+    {
+      "day": 2,
+      "qid": "controls-unit:s03:8cfeb8f16c",
+      "correct": true,
+      "next_interval_days": 1
+    },
+    {
+      "day": 2,
+      "qid": "controls-unit:s03:96acdb42d4",
+      "correct": true,
+      "next_interval_days": 1
+    },
+    {
+      "day": 2,
+      "qid": "controls-unit:s03:b9f98585ea",
+      "correct": true,
+      "next_interval_days": 1
+    },
+    {
+      "day": 2,
+      "qid": "controls-unit:s03:e16b77041a",
+      "correct": true,
+      "next_interval_days": 1
+    },
+    {
+      "day": 2,
+      "qid": "controls-unit:s04:8ed97fd343",
+      "correct": true,
+      "next_interval_days": 1
+    },
+    {
+      "day": 2,
+      "qid": "controls-unit:s05:0d11173ce3",
+      "correct": true,
+      "next_interval_days": 1
+    },
+    {
+      "day": 3,
+      "qid": "controls-unit:s03:764a529628",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 3,
+      "qid": "controls-unit:s03:8cfeb8f16c",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 3,
+      "qid": "controls-unit:s03:96acdb42d4",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 3,
+      "qid": "controls-unit:s03:b9f98585ea",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 3,
+      "qid": "controls-unit:s03:e16b77041a",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 3,
+      "qid": "controls-unit:s04:8ed97fd343",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 3,
+      "qid": "controls-unit:s05:0d11173ce3",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 7,
+      "qid": "controls-unit:s01:2a42ef38e6",
+      "correct": true,
+      "next_interval_days": 15
+    },
+    {
+      "day": 7,
+      "qid": "controls-unit:s01:ff0e07156c",
+      "correct": true,
+      "next_interval_days": 15
+    },
+    {
+      "day": 7,
+      "qid": "controls-unit:s02:61e74451ea",
+      "correct": true,
+      "next_interval_days": 15
+    },
+    {
+      "day": 7,
+      "qid": "controls-unit:s02:97ee83a1ed",
+      "correct": true,
+      "next_interval_days": 15
+    },
+    {
+      "day": 9,
+      "qid": "controls-unit:s03:764a529628",
+      "correct": true,
+      "next_interval_days": 9
+    },
+    {
+      "day": 9,
+      "qid": "controls-unit:s03:8cfeb8f16c",
+      "correct": true,
+      "next_interval_days": 9
+    },
+    {
+      "day": 9,
+      "qid": "controls-unit:s03:96acdb42d4",
+      "correct": true,
+      "next_interval_days": 9
+    },
+    {
+      "day": 9,
+      "qid": "controls-unit:s03:b9f98585ea",
+      "correct": true,
+      "next_interval_days": 12
+    },
+    {
+      "day": 9,
+      "qid": "controls-unit:s03:e16b77041a",
+      "correct": true,
+      "next_interval_days": 9
+    },
+    {
+      "day": 9,
+      "qid": "controls-unit:s04:8ed97fd343",
+      "correct": true,
+      "next_interval_days": 9
+    },
+    {
+      "day": 9,
+      "qid": "controls-unit:s05:0d11173ce3",
+      "correct": true,
+      "next_interval_days": 9
+    }
+  ],
+  "dashboard": [
+    {
+      "topic": "1 Open-Loop and Closed-Loop Control",
+      "mastery": 0.837,
+      "status": "mastered",
+      "attempts": 6,
+      "placement": "mastered",
+      "due": 0,
+      "next_review": "2026-01-27"
+    },
+    {
+      "topic": "2 First-Order Systems and the Time Constant",
+      "mastery": 0.837,
+      "status": "mastered",
+      "attempts": 6,
+      "placement": "mastered",
+      "due": 0,
+      "next_review": "2026-01-27"
+    },
+    {
+      "topic": "3 Stability and Poles",
+      "mastery": 0.835,
+      "status": "mastered",
+      "attempts": 27,
+      "placement": "not yet",
+      "due": 0,
+      "next_review": "2026-01-23"
+    },
+    {
+      "topic": "4 PID Control",
+      "mastery": 0.626,
+      "status": "developing",
+      "attempts": 5,
+      "placement": "not yet",
+      "due": 0,
+      "next_review": "2026-01-23"
+    },
+    {
+      "topic": "5 Consensus in Multi-Agent Systems",
+      "mastery": 0.626,
+      "status": "developing",
+      "attempts": 5,
+      "placement": "not yet",
+      "due": 0,
+      "next_review": "2026-01-23"
+    }
+  ]
+}

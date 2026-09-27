@@ -1,0 +1,540 @@
+{
+  "model": "ollama/qwen3.5:4b",
+  "answers": {
+    "algebra": {
+      "in_scope": 10,
+      "out_of_scope": 4,
+      "retrieval_top1_correct": 10,
+      "answered_grounded": 10,
+      "fallback_to_passages": 0,
+      "wrongly_declined": 0,
+      "cites_expected_section": 10,
+      "answers_with_citation": 14,
+      "out_of_scope_declined": 4,
+      "median_seconds": 1.69,
+      "rows": [
+        {
+          "question": "How do I check whether a number is a solution of an equation?",
+          "expected": "2.1",
+          "top1": "2.1",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "2.1",
+            "2.2"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 1.69,
+          "answer": "To check if a number is a solution, substitute that number for the variable in the equation [S1]. Next, simplify the expressions on both sides of the equation [S2]. Finally, determine if the resulting statement is true; if it is, the number is a solution [S3], and if it is not, it is not a solution [S4]."
+        },
+        {
+          "question": "What does the Subtraction Property of Equality say?",
+          "expected": "2.1",
+          "top1": "2.1",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "2.1"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 1,
+          "seconds": 1.68,
+          "answer": "The Subtraction Property of Equality states that for any numbers $a$, $b$, and $c$, if $a = b$, then $a - c = b - c$. This means you can subtract the same quantity from both sides of an equation to maintain equality [S1]. To use this property, you subtract the same value from each side to isolate the variable [S3]."
+        },
+        {
+          "question": "What does the Addition Property of Equality allow me to do?",
+          "expected": "2.1",
+          "top1": "2.1",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "2.1",
+            "2.2"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 1.63,
+          "answer": "The Addition Property of Equality allows you to add the same quantity to both sides of an equation while maintaining equality [S3]. This is useful when you need to 'undo' subtraction from a variable by adding that number to both sides [S4]. For example, if $x - 5 = 8$, you can add 5 to both sides to isolate $x$ [S4]."
+        },
+        {
+          "question": "What does the Division Property of Equality state?",
+          "expected": "2.2",
+          "top1": "2.2",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "2.2"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 2.09,
+          "answer": "The Division Property of Equality states that for any numbers $a$, $b$, and $c$ (where $c \\neq 0$), if $a = b$, then $\\frac{a}{c} = \\frac{b}{c}$ [S1]. This means you can divide both sides of an equation by the same non-zero number to maintain equality [S2]. The goal is to \"undo\" multiplication on the variable by dividing [S4]."
+        },
+        {
+          "question": "How do I use the Multiplication Property of Equality to solve an equation?",
+          "expected": "2.2",
+          "top1": "2.2",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "2.2"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 1.7,
+          "answer": "To use the Multiplication Property of Equality, you multiply both sides of the equation by the same number [S2]. This allows you to \"undo\" division and isolate the variable [S2]. For example, if $y$ is divided by $-7$, you multiply both sides by $-7$ to solve for $y$ [S2]."
+        },
+        {
+          "question": "How do I solve an equation that has constants on both sides?",
+          "expected": "2.3",
+          "top1": "2.3",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "2.3"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 2.32,
+          "answer": "To solve an equation with constants on both sides, first choose one side to be the \"variable\" side and the other to be the \"constant\" side [S4]. Then, use the Addition or Subtraction Properties of Equality to move all variable terms to the chosen side and all constant terms to the other side [S4]. Once the variables are on one side and constants on the other, simplify both sides [S1], divide by the coefficient of the variable to isolate it [S2], and finally check your solution by substituting it back into the original equation [S5]."
+        },
+        {
+          "question": "When there are variables on both sides, which side should I choose as the variable side?",
+          "expected": "2.3",
+          "top1": "2.3",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "2.3"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 2.12,
+          "answer": "When solving an equation with variables on both sides, you should generally choose the side with the larger coefficient of $x$ to be the \"variable\" side [S2]. This strategy usually makes the arithmetic easier because it avoids working with negative coefficients early in the process [S3]. For example, if one side has $8n$ and the other has $-2n$, you would make the left side (with $8n$) your variable side since $8 > -2$ [S3]."
+        },
+        {
+          "question": "What are the steps of the general strategy for solving linear equations?",
+          "expected": "2.4",
+          "top1": "2.4",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "2.4"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 3.38,
+          "answer": "The general strategy for solving linear equations follows these specific steps [S4]:\n\n1.  **Simplify each side** of the equation by using the Distributive Property to remove parentheses and combining like terms [S4].\n2.  **Collect all variable terms** on one side of the equation using the Addition or Subtraction Property of Equality [S4].\n3.  **Collect all constant terms** on the other side using the Addition or Subtraction Property of Equality [S4].\n4.  **Make the coefficient of the variable term equal to 1** using the Multiplication or Division Property of Equality [S4].\n5.  **Check the solution** by substituting it back into the original equation to ensure it results in a true statement [S4].\n\nYou should simplify both sides first because doing so makes the remaining steps easier [S1][S2]."
+        },
+        {
+          "question": "What is an identity, and how is it different from a contradiction?",
+          "expected": "2.4",
+          "top1": "2.4",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "2.4"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 2.64,
+          "answer": "An **identity** is an equation that is true for any value of the variable [S4]. When you solve an identity, the variable terms disappear while leaving a true statement (like $6 = 6$), meaning the solution is all real numbers [S4].\n\nA **contradiction** is an equation that is false for all values of the variable [S3]. When you solve a contradiction, the variable terms disappear while leaving a false statement (like $0 \\neq -1$), meaning it has no solution [S4].\n\nThe key difference is that an identity results in a true statement after simplification, whereas a contradiction results in a false statement [S3][S4]."
+        },
+        {
+          "question": "What is a conditional equation?",
+          "expected": "2.4",
+          "top1": "2.4",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "2.4"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 1.77,
+          "answer": "A conditional equation is true for one or more values of the variable but false for all other values [S1]. Unlike identities, which are always true, or contradictions, which are never true, a conditional equation has specific solutions that make it valid [S4]. For example, $7x + 8 = -13$ is only true when $x = -3$, making it a conditional equation [S1]."
+        },
+        {
+          "question": "How do I use the quadratic formula?",
+          "expected": null,
+          "top1": "2.1",
+          "grounded": false,
+          "fallback": false,
+          "abstained": true,
+          "cited_sections": [
+            "2.1",
+            "2.3"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 0.65,
+          "answer": "Your course material doesn't cover this question, so I won't answer it from general knowledge. The closest parts of the material are [S1] and [S2]."
+        },
+        {
+          "question": "How do I find the slope of a line through two points?",
+          "expected": null,
+          "top1": "2.3",
+          "grounded": false,
+          "fallback": false,
+          "abstained": true,
+          "cited_sections": [
+            "2.3",
+            "2.4"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 0.73,
+          "answer": "Your course material doesn't cover this question, so I won't answer it from general knowledge. The closest parts of the material are [S1] and [S2]."
+        },
+        {
+          "question": "What is a PID controller?",
+          "expected": null,
+          "top1": "2.1",
+          "grounded": false,
+          "fallback": false,
+          "abstained": true,
+          "cited_sections": [
+            "2.1",
+            "2.2"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 0.52,
+          "answer": "Your course material doesn't cover this question, so I won't answer it from general knowledge. The closest parts of the material are [S1] and [S2]."
+        },
+        {
+          "question": "What does the Laplacian of a graph measure?",
+          "expected": null,
+          "top1": "2.2",
+          "grounded": false,
+          "fallback": false,
+          "abstained": true,
+          "cited_sections": [
+            "2.2",
+            "2.4"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 0.65,
+          "answer": "Your course material doesn't cover this question, so I won't answer it from general knowledge. The closest parts of the material are [S1] and [S2]."
+        }
+      ]
+    },
+    "controls": {
+      "in_scope": 10,
+      "out_of_scope": 4,
+      "retrieval_top1_correct": 10,
+      "answered_grounded": 10,
+      "fallback_to_passages": 0,
+      "wrongly_declined": 0,
+      "cites_expected_section": 10,
+      "answers_with_citation": 14,
+      "out_of_scope_declined": 4,
+      "median_seconds": 1.48,
+      "rows": [
+        {
+          "question": "What is the difference between open-loop and closed-loop control?",
+          "expected": "1",
+          "top1": "1",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "1"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 1.7,
+          "answer": "Open-loop control computes the input from the reference alone without measuring the output, making it simple but unable to reject disturbances or correct for errors in the plant model [S1]. Closed-loop control uses a sensor to measure the output and acts on the difference between the reference and the measured value, known as the error [S1]. This feedback makes the system less sensitive to disturbances and model errors, though it requires a sensor and risks instability if poorly tuned [S2]."
+        },
+        {
+          "question": "Why can't open-loop control reject disturbances?",
+          "expected": "1",
+          "top1": "1",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "1"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 1.32,
+          "answer": "Open-loop control computes its input from the reference alone without measuring the output [S1]. Because it does not measure the actual output, it cannot detect when a disturbance changes the result [S1]. Consequently, there is no error signal to correct the system if an unexpected input occurs [S1]."
+        },
+        {
+          "question": "How much of its final value does a first-order system reach after one time constant?",
+          "expected": "2",
+          "top1": "2",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "2"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 1.58,
+          "answer": "After one time constant ($\\tau$), a first-order system reaches about 63.2% of its final value [S2]. This occurs because the step response equation $y(t) = K \\cdot U \\cdot (1 - e^{-t/\\tau})$ yields approximately 0.632 when $t = \\tau$ [S2]."
+        },
+        {
+          "question": "How can I estimate the time constant from a measured step response?",
+          "expected": "2",
+          "top1": "2",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "2"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 1.75,
+          "answer": "You can estimate the time constant by finding the time it takes for the output to reach 63.2% of its total change during a step response [S1]. This specific percentage corresponds exactly to one time constant ($\\tau$) for a first-order system [S2]. Alternatively, you can identify $\\tau$ as the time at which the output reaches approximately 63.2% of its final value [S2]."
+        },
+        {
+          "question": "When is a continuous-time linear system stable?",
+          "expected": "3",
+          "top1": "3",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "3"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 1.66,
+          "answer": "A continuous-time linear system is stable if and only if all its poles have strictly negative real parts [S1]. This means every pole must lie in the left half of the complex plane [S1]. If any pole has a positive real part, the response grows without bound, making the system unstable [S1]. Poles on the imaginary axis result in marginal stability rather than strict stability [S1]."
+        },
+        {
+          "question": "Where is the pole of a first-order system?",
+          "expected": "3",
+          "top1": "3",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "3"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 1.84,
+          "answer": "For a first-order system with transfer function $G(s) = K / (\\tau s + 1)$, the pole is located at $s = -1/\\tau$ [S1]. This value represents the point where the denominator of the transfer function becomes zero [S1]. Since $\\tau$ (the time constant) is positive, this pole always has a negative real part, placing it in the left half of the complex plane and ensuring the system is stable [S1]."
+        },
+        {
+          "question": "What does the derivative term of a PID controller do, and what is its drawback?",
+          "expected": "4",
+          "top1": "4",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "4"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 1.43,
+          "answer": "The derivative term reacts to the rate of change of the error to predict its future trend [S1]. It adds damping, which reduces overshoot [S2]. However, its main drawback is that it amplifies high-frequency measurement noise [S1]. To mitigate this, the derivative is typically low-pass filtered in practice [S2]."
+        },
+        {
+          "question": "What is integrator windup and how is it prevented?",
+          "expected": "4",
+          "top1": "4",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "4"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 1,
+          "seconds": 1.53,
+          "answer": "Integrator windup occurs when an actuator saturates (reaches its maximum limit), causing the integral term to keep accumulating error that cannot be acted upon. This accumulation leads to large overshoot once the error changes sign [S1]. It is prevented using anti-windup schemes, which stop or limit the integration while the actuator is saturated [S1]."
+        },
+        {
+          "question": "What value does the consensus protocol converge to on a connected undirected graph?",
+          "expected": "5",
+          "top1": "5",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "5"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 1.62,
+          "answer": "On a connected undirected graph, the consensus protocol drives every agent to the average of their initial values [S1]. This occurs because the sum of the states never changes during the process [S1]. The convergence happens without overshoot and follows an exponential approach determined by the algebraic connectivity (the second-smallest eigenvalue) of the Laplacian matrix [S2][S1]."
+        },
+        {
+          "question": "What happens to consensus if the communication graph is not connected?",
+          "expected": "5",
+          "top1": "5",
+          "grounded": true,
+          "fallback": false,
+          "abstained": false,
+          "cited_sections": [
+            "5"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 1.26,
+          "answer": "If the communication graph is not connected, the eigenvalue 0 appears more than once [S2]. Consequently, the protocol drives each connected group to agree on its own average value, but these groups do not agree with each other [S1]."
+        },
+        {
+          "question": "What is a Bode plot?",
+          "expected": null,
+          "top1": "4",
+          "grounded": false,
+          "fallback": false,
+          "abstained": true,
+          "cited_sections": [
+            "3",
+            "4"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 0.65,
+          "answer": "Your course material doesn't cover this question, so I won't answer it from general knowledge. The closest parts of the material are [S1] and [S2]."
+        },
+        {
+          "question": "How does a Kalman filter estimate the state of a system?",
+          "expected": null,
+          "top1": "2",
+          "grounded": false,
+          "fallback": false,
+          "abstained": true,
+          "cited_sections": [
+            "2",
+            "3"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 0.65,
+          "answer": "Your course material doesn't cover this question, so I won't answer it from general knowledge. The closest parts of the material are [S1] and [S2]."
+        },
+        {
+          "question": "How do I solve the equation 3x + 4 = 10?",
+          "expected": null,
+          "top1": "2",
+          "grounded": false,
+          "fallback": false,
+          "abstained": true,
+          "cited_sections": [
+            "2",
+            "4"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 0.59,
+          "answer": "Your course material doesn't cover this question, so I won't answer it from general knowledge. The closest parts of the material are [S1] and [S2]."
+        },
+        {
+          "question": "What does the Division Property of Equality state?",
+          "expected": null,
+          "top1": "5",
+          "grounded": false,
+          "fallback": false,
+          "abstained": true,
+          "cited_sections": [
+            "3",
+            "5"
+          ],
+          "attempts": 1,
+          "uncited_sentences": 0,
+          "seconds": 0.59,
+          "answer": "Your course material doesn't cover this question, so I won't answer it from general knowledge. The closest parts of the material are [S1] and [S2]."
+        }
+      ]
+    }
+  },
+  "bank": {
+    "algebra": {
+      "kept": 28,
+      "kept_mcq": 23,
+      "kept_short": 5,
+      "kept_short_exact": 0,
+      "mcq_by_difficulty": {
+        "1": 8,
+        "2": 8,
+        "3": 7
+      },
+      "rejected": 12,
+      "rejected_by_reason": {
+        "depends on a figure or table the learner can't see": 1,
+        "failed the independent answer check": 3,
+        "near-duplicate of a kept question": 2,
+        "refers to 'the passage' or a source label instead of being self-contained": 1,
+        "rubric not grounded in the passages or not met by the model answer": 3,
+        "the keyed option is not the equation's solution": 2
+      },
+      "generation_errors": 0,
+      "generator": "ollama/qwen3.5:4b"
+    },
+    "controls": {
+      "kept": 37,
+      "kept_mcq": 30,
+      "kept_short": 7,
+      "kept_short_exact": 0,
+      "mcq_by_difficulty": {
+        "1": 10,
+        "2": 10,
+        "3": 10
+      },
+      "rejected": 7,
+      "rejected_by_reason": {
+        "failed the independent answer check": 2,
+        "near-duplicate of a kept question": 1,
+        "refers to 'the passage' or a source label instead of being self-contained": 1,
+        "rubric not grounded in the passages or not met by the model answer": 3
+      },
+      "generation_errors": 0,
+      "generator": "ollama/qwen3.5:4b"
+    }
+  },
+  "diagnostic": {
+    "algebra": {
+      "topics": 4,
+      "noise_free": {
+        "learners": 5,
+        "start_topic_correct": 5,
+        "mean_questions": 6.8,
+        "max_questions": 8
+      },
+      "noisy": {
+        "learners": 250,
+        "start_topic_correct": 159,
+        "mean_questions": 8.29,
+        "max_questions": 12
+      }
+    },
+    "controls": {
+      "topics": 5,
+      "noise_free": {
+        "learners": 6,
+        "start_topic_correct": 6,
+        "mean_questions": 8.5,
+        "max_questions": 10
+      },
+      "noisy": {
+        "learners": 300,
+        "start_topic_correct": 191,
+        "mean_questions": 10.35,
+        "max_questions": 14
+      }
+    }
+  },
+  "seconds": 42.1
+}

@@ -1,0 +1,431 @@
+{
+  "subject": "algebra",
+  "provider": "ollama/qwen3.5:4b",
+  "timings_s": {
+    "ingest_and_index": 0.04,
+    "question_bank": 0.0,
+    "diagnostic": 0.01,
+    "tutor": 11.92,
+    "socratic": 8.04,
+    "quiz": 0.74
+  },
+  "topics": [
+    {
+      "topic": "2.1 Solve Equations Using the Subtraction and Addition Properties of Equality",
+      "requires": "-",
+      "found_by": "-"
+    },
+    {
+      "topic": "2.2 Solve Equations using the Division and Multiplication Properties of Equality",
+      "requires": "2.1 Solve Equations Using the Subtraction and Addition Properties of Equality",
+      "found_by": "sequence"
+    },
+    {
+      "topic": "2.3 Solve Equations with Variables and Constants on Both Sides",
+      "requires": "2.2 Solve Equations using the Division and Multiplication Properties of Equality",
+      "found_by": "sequence"
+    },
+    {
+      "topic": "2.4 Use a General Strategy to Solve Linear Equations",
+      "requires": "2.3 Solve Equations with Variables and Constants on Both Sides",
+      "found_by": "sequence"
+    }
+  ],
+  "bank": {
+    "kept": 28,
+    "by_kind": {
+      "mcq": 23,
+      "short": 5
+    },
+    "rejected": 12,
+    "rejected_reasons": {
+      "rubric not grounded in the passages or not met by the model answer": 3,
+      "near-duplicate of a kept question": 2,
+      "refers to 'the passage' or a source label instead of being self-contained": 1,
+      "the keyed option is not the equation's solution": 2,
+      "depends on a figure or table the learner can't see": 1,
+      "failed the independent answer check": 3
+    },
+    "errors": 0
+  },
+  "diagnostic": {
+    "questions": 7,
+    "overall": "intermediate",
+    "start_topic": "2.3 Solve Equations with Variables and Constants on Both Sides",
+    "simulated_learner_knows": [
+      "2.1 Solve Equations Using the Subtraction and Addition Properties of Equality",
+      "2.2 Solve Equations using the Division and Multiplication Properties of Equality"
+    ],
+    "topics": {
+      "2.1 Solve Equations Using the Subtraction and Addition Properties of Equality": "mastered",
+      "2.2 Solve Equations using the Division and Multiplication Properties of Equality": "mastered",
+      "2.3 Solve Equations with Variables and Constants on Both Sides": "not yet",
+      "2.4 Use a General Strategy to Solve Linear Equations": "not yet"
+    }
+  },
+  "tutor": [
+    {
+      "question": "How do I check whether a number is a solution of an equation?",
+      "answer": "To check if a number is a solution, you must substitute that number for the variable in the equation [S1]. Next, simplify the expressions on both sides of the equation [S2]. Finally, determine if the resulting statement is true; if the left side equals the right side, the number is a solution [S3].\n\n**Worked Example:**\nIs $x = 3$ a solution of $4x - 2 = 2x + 1$?\n1. Substitute $3$ for $x$: $4(3) - 2 = 2(3) + 1$ [S2]\n2. Simplify both sides: $12 - 2 = 6 + 1$, which becomes $10 = 7$ [S2]\n3. Compare the sides: Since $10$ is not equal to $7$, the statement is false, so $x = 3$ is **not** a solution [S3].",
+      "citations": [
+        "Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.1 Solve Equations Using the Subtraction and Addition Properties of Equality, p. 2",
+        "Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.1 Solve Equations Using the Subtraction and Addition Properties of Equality, p. 2",
+        "Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.1 Solve Equations Using the Subtraction and Addition Properties of Equality, p. 13"
+      ],
+      "grounded": true,
+      "fallback": false,
+      "abstained": false,
+      "attempts": 1,
+      "seconds": 8.62
+    },
+    {
+      "question": "When an equation has variables on both sides, which side should I put the variable on?",
+      "answer": "When an equation has variables on both sides, you can choose either side to be the \"variable side\" and the other side to be the \"constant side\" [S1]. Once you label them, use the Addition or Subtraction Properties of Equality to move all variable terms to your chosen variable side and all constant terms to the other side [S2]. This process transforms the equation into the form $ax = b$, which you can then solve using multiplication or division [S3].\n\nFor example, in the equation $12x = -x + 26$, you might choose the left side as the \"variable side\" and add $x$ to both sides to get all variables on the left [S5]. Alternatively, in $7x + 5 = 6x + 2$, you could choose the right side as the variable side by subtracting $7x$ from both sides to collect the variables there [S3].",
+      "citations": [
+        "Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.3 Solve Equations with Variables and Constants on Both Sides, p. 31",
+        "Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.3 Solve Equations with Variables and Constants on Both Sides, p. 30",
+        "Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.3 Solve Equations with Variables and Constants on Both Sides, p. 30",
+        "Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.3 Solve Equations with Variables and Constants on Both Sides, p. 33"
+      ],
+      "grounded": true,
+      "fallback": false,
+      "abstained": false,
+      "attempts": 1,
+      "seconds": 3.3
+    }
+  ],
+  "socratic": {
+    "question": "How do I solve x + 7 = 12?",
+    "turns": [
+      {
+        "who": "tutor",
+        "text": "Great start! To solve for x, you need to isolate it on one side of the equation.\n\nWhat operation should you perform on both sides to remove the +7 from the left side? (Look at [S4].)",
+        "cites": [
+          "Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.3 Solve Equations with Variables and Constants on Both Sides, p. 33"
+        ],
+        "cite_added": true
+      },
+      {
+        "who": "learner",
+        "text": "Subtract 7?",
+        "cites": [],
+        "cite_added": false
+      },
+      {
+        "who": "tutor",
+        "text": "That is exactly right; subtracting 7 from both sides will isolate the variable x as shown in [S4].\n\nWhat does the equation look like after you perform that subtraction?",
+        "cites": [
+          "Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.3 Solve Equations with Variables and Constants on Both Sides, p. 33"
+        ],
+        "cite_added": false
+      },
+      {
+        "who": "learner",
+        "text": "x = 5, and 5 + 7 = 12 checks out.",
+        "cites": [],
+        "cite_added": false
+      },
+      {
+        "who": "tutor",
+        "text": "You have correctly identified the operation to isolate the variable and verified your solution using substitution, which aligns perfectly with the strategy in [S4] and the checking method in [S2].\n\nYou've got it. Here is the idea in full, from your material:\n\nTo solve the equation $x + 7 = 12$, you can follow these steps based on the strategy for equations with variables and constants on both sides [S4]:\n\n1.  **Identify your goal**: You want to get the variable ($x$) by itself on one side of the equation [S4].\n2.  **Move the constant**: Since there is a $+7$ on the left side, subtract $7$ from both sides to keep the equation balanced [S4].\n    *   $x + 7 - 7 = 12 - 7$\n3.  **Simplify**: This leaves you with $x = 5$ [S4].\n\n**Worked Example**:\nIf you have $x + 7 = 12$, subtracting $7$ from both sides gives $x = 5$. You can check this by substituting $5$ back into the original equation: $5 + 7 = 12$, which is true [S2].",
+        "cites": [
+          "Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.3 Solve Equations with Variables and Constants on Both Sides, p. 33",
+          "Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.3 Solve Equations with Variables and Constants on Both Sides, p. 37"
+        ],
+        "cite_added": false
+      }
+    ],
+    "ended": true
+  },
+  "quiz": [
+    {
+      "kind": "mcq",
+      "question": "According to the strategy described for solving equations with variables and constants on both sides, what is the first step?",
+      "response": "1",
+      "score": 1.0,
+      "quality": 4,
+      "feedback": "Correct. states: \"Step 1. Choose which side will be the 'variable' side\u2014the other side will be the 'constant' side.\" (Source: Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.3 Solve Equations with Variables and Constants on Both Sides, p. 34)",
+      "points": []
+    },
+    {
+      "kind": "mcq",
+      "question": "What action should be taken to make the coefficient of a variable equal to 1, according to the beginning strategy?",
+      "response": "1",
+      "score": 0.0,
+      "quality": 1,
+      "feedback": "Not quite: the answer is A) Use the Multiplication or Division Property of Equality.. states: \"Step 4. Make the coefficient of the variable equal 1, using the Multiplication or Division Property of Equality.\" (Source: Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.3 Solve Equations with Variables and Constants on Both Sides, p. 34)",
+      "points": []
+    },
+    {
+      "kind": "mcq",
+      "question": "According to the Beginning Strategy, if an equation has variables and constants on both sides, which action should be taken first?",
+      "response": "2",
+      "score": 1.0,
+      "quality": 4,
+      "feedback": "Correct. The material says: that Step 1 of the Beginning Strategy is to 'Choose which side will be the variable side\u2014the other side will be the constant side.' It does not specify dividing by coefficients or moving terms immediately as the first step. (Source: Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.3 Solve Equations with Variables and Constants on Both Sides, p. 34)",
+      "points": []
+    },
+    {
+      "kind": "short",
+      "question": "According to the 'Beginning Strategy' for solving equations with variables and constants on both sides, what is the recommended approach when choosing which side to be the 'variable' side?",
+      "response": "It is better to choose the side with the larger coefficient of x as the 'variable' side because it avoids negative coefficients.",
+      "score": 1.0,
+      "quality": 5,
+      "feedback": "Score 100%.\n\u2713 Identifies the specific strategy step for choosing a side.\nModel answer: It is better to choose the side with the larger coefficient of x as the 'variable' side because it avoids negative coefficients. (Source: Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.3 Solve Equations with Variables and Constants on Both Sides, p. 39)",
+      "points": [
+        {
+          "point": "Identifies the specific strategy step for choosing a side.",
+          "met": true,
+          "method": "keyword"
+        }
+      ]
+    },
+    {
+      "kind": "short",
+      "question": "In the process of solving an equation where variables and constants are on both sides, what action must be taken to 'undo' a subtraction that occurred on the variable side?",
+      "response": "I think it has something to do with the size of the numbers.",
+      "score": 0.0,
+      "quality": 0,
+      "feedback": "Score 0%.\n\u2717 States that the action applies to both sides of the equation.\nModel answer: You must add the term to both sides. (Source: Elementary Algebra, Chapter 2 (sections 2.1-2.4), \u00a72.3 Solve Equations with Variables and Constants on Both Sides, p. 31)",
+      "points": [
+        {
+          "point": "States that the action applies to both sides of the equation.",
+          "met": false,
+          "method": "none"
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "day": 1,
+      "qid": "algebra-unit:s01:385f7c5320",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 1,
+      "qid": "algebra-unit:s01:b33bbf8212",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 1,
+      "qid": "algebra-unit:s02:0dcb06caa3",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 1,
+      "qid": "algebra-unit:s02:a0e66dac75",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 1,
+      "qid": "algebra-unit:s03:82f249b956",
+      "correct": false,
+      "next_interval_days": 1
+    },
+    {
+      "day": 1,
+      "qid": "algebra-unit:s03:83b3fd70d3",
+      "correct": false,
+      "next_interval_days": 1
+    },
+    {
+      "day": 1,
+      "qid": "algebra-unit:s03:b0a1a2c661",
+      "correct": false,
+      "next_interval_days": 1
+    },
+    {
+      "day": 1,
+      "qid": "algebra-unit:s03:d83d031dc8",
+      "correct": false,
+      "next_interval_days": 1
+    },
+    {
+      "day": 1,
+      "qid": "algebra-unit:s03:e736eeb5dc",
+      "correct": false,
+      "next_interval_days": 1
+    },
+    {
+      "day": 1,
+      "qid": "algebra-unit:s04:2898bce833",
+      "correct": false,
+      "next_interval_days": 1
+    },
+    {
+      "day": 2,
+      "qid": "algebra-unit:s03:82f249b956",
+      "correct": true,
+      "next_interval_days": 1
+    },
+    {
+      "day": 2,
+      "qid": "algebra-unit:s03:83b3fd70d3",
+      "correct": true,
+      "next_interval_days": 1
+    },
+    {
+      "day": 2,
+      "qid": "algebra-unit:s03:b0a1a2c661",
+      "correct": true,
+      "next_interval_days": 1
+    },
+    {
+      "day": 2,
+      "qid": "algebra-unit:s03:d83d031dc8",
+      "correct": true,
+      "next_interval_days": 1
+    },
+    {
+      "day": 2,
+      "qid": "algebra-unit:s03:e736eeb5dc",
+      "correct": true,
+      "next_interval_days": 1
+    },
+    {
+      "day": 2,
+      "qid": "algebra-unit:s04:2898bce833",
+      "correct": true,
+      "next_interval_days": 1
+    },
+    {
+      "day": 3,
+      "qid": "algebra-unit:s03:82f249b956",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 3,
+      "qid": "algebra-unit:s03:83b3fd70d3",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 3,
+      "qid": "algebra-unit:s03:b0a1a2c661",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 3,
+      "qid": "algebra-unit:s03:d83d031dc8",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 3,
+      "qid": "algebra-unit:s03:e736eeb5dc",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 3,
+      "qid": "algebra-unit:s04:2898bce833",
+      "correct": true,
+      "next_interval_days": 6
+    },
+    {
+      "day": 7,
+      "qid": "algebra-unit:s01:385f7c5320",
+      "correct": true,
+      "next_interval_days": 15
+    },
+    {
+      "day": 7,
+      "qid": "algebra-unit:s01:b33bbf8212",
+      "correct": true,
+      "next_interval_days": 15
+    },
+    {
+      "day": 7,
+      "qid": "algebra-unit:s02:0dcb06caa3",
+      "correct": true,
+      "next_interval_days": 15
+    },
+    {
+      "day": 7,
+      "qid": "algebra-unit:s02:a0e66dac75",
+      "correct": true,
+      "next_interval_days": 15
+    },
+    {
+      "day": 9,
+      "qid": "algebra-unit:s03:82f249b956",
+      "correct": true,
+      "next_interval_days": 12
+    },
+    {
+      "day": 9,
+      "qid": "algebra-unit:s03:83b3fd70d3",
+      "correct": true,
+      "next_interval_days": 9
+    },
+    {
+      "day": 9,
+      "qid": "algebra-unit:s03:b0a1a2c661",
+      "correct": true,
+      "next_interval_days": 9
+    },
+    {
+      "day": 9,
+      "qid": "algebra-unit:s03:d83d031dc8",
+      "correct": true,
+      "next_interval_days": 9
+    },
+    {
+      "day": 9,
+      "qid": "algebra-unit:s03:e736eeb5dc",
+      "correct": true,
+      "next_interval_days": 9
+    },
+    {
+      "day": 9,
+      "qid": "algebra-unit:s04:2898bce833",
+      "correct": true,
+      "next_interval_days": 9
+    }
+  ],
+  "dashboard": [
+    {
+      "topic": "2.1 Solve Equations Using the Subtraction and Addition Properties of Equality",
+      "mastery": 0.837,
+      "status": "mastered",
+      "attempts": 6,
+      "placement": "mastered",
+      "due": 0,
+      "next_review": "2026-01-27"
+    },
+    {
+      "topic": "2.2 Solve Equations using the Division and Multiplication Properties of Equality",
+      "mastery": 0.837,
+      "status": "mastered",
+      "attempts": 6,
+      "placement": "mastered",
+      "due": 0,
+      "next_review": "2026-01-27"
+    },
+    {
+      "topic": "2.3 Solve Equations with Variables and Constants on Both Sides",
+      "mastery": 0.835,
+      "status": "mastered",
+      "attempts": 27,
+      "placement": "not yet",
+      "due": 0,
+      "next_review": "2026-01-23"
+    },
+    {
+      "topic": "2.4 Use a General Strategy to Solve Linear Equations",
+      "mastery": 0.626,
+      "status": "developing",
+      "attempts": 5,
+      "placement": "not yet",
+      "due": 0,
+      "next_review": "2026-01-23"
+    }
+  ]
+}

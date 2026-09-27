@@ -1,0 +1,28 @@
+{"subject": "algebra", "question": "How do I check whether a number is a solution of an equation?", "section": "2.1"}
+{"subject": "algebra", "question": "What does the Subtraction Property of Equality say?", "section": "2.1"}
+{"subject": "algebra", "question": "What does the Addition Property of Equality allow me to do?", "section": "2.1"}
+{"subject": "algebra", "question": "What does the Division Property of Equality state?", "section": "2.2"}
+{"subject": "algebra", "question": "How do I use the Multiplication Property of Equality to solve an equation?", "section": "2.2"}
+{"subject": "algebra", "question": "How do I solve an equation that has constants on both sides?", "section": "2.3"}
+{"subject": "algebra", "question": "When there are variables on both sides, which side should I choose as the variable side?", "section": "2.3"}
+{"subject": "algebra", "question": "What are the steps of the general strategy for solving linear equations?", "section": "2.4"}
+{"subject": "algebra", "question": "What is an identity, and how is it different from a contradiction?", "section": "2.4"}
+{"subject": "algebra", "question": "What is a conditional equation?", "section": "2.4"}
+{"subject": "algebra", "question": "How do I use the quadratic formula?", "section": null}
+{"subject": "algebra", "question": "How do I find the slope of a line through two points?", "section": null}
+{"subject": "algebra", "question": "What is a PID controller?", "section": null}
+{"subject": "algebra", "question": "What does the Laplacian of a graph measure?", "section": null}
+{"subject": "controls", "question": "What is the difference between open-loop and closed-loop control?", "section": "1"}
+{"subject": "controls", "question": "Why can't open-loop control reject disturbances?", "section": "1"}
+{"subject": "controls", "question": "How much of its final value does a first-order system reach after one time constant?", "section": "2"}
+{"subject": "controls", "question": "How can I estimate the time constant from a measured step response?", "section": "2"}
+{"subject": "controls", "question": "When is a continuous-time linear system stable?", "section": "3"}
+{"subject": "controls", "question": "Where is the pole of a first-order system?", "section": "3"}
+{"subject": "controls", "question": "What does the derivative term of a PID controller do, and what is its drawback?", "section": "4"}
+{"subject": "controls", "question": "What is integrator windup and how is it prevented?", "section": "4"}
+{"subject": "controls", "question": "What value does the consensus protocol converge to on a connected undirected graph?", "section": "5"}
+{"subject": "controls", "question": "What happens to consensus if the communication graph is not connected?", "section": "5"}
+{"subject": "controls", "question": "What is a Bode plot?", "section": null}
+{"subject": "controls", "question": "How does a Kalman filter estimate the state of a system?", "section": null}
+{"subject": "controls", "question": "How do I solve the equation 3x + 4 = 10?", "section": null}
+{"subject": "controls", "question": "What does the Division Property of Equality state?", "section": null}

@@ -1,0 +1,4 @@
+# Tool configuration only: the modules live in src/ and are run from the repository folder.
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]

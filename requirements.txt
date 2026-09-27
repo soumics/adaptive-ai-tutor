@@ -1,0 +1,15 @@
+# Versions verified in the project's Python 3.12 container environment. No PyTorch: embeddings and the
+# local LLM are served by Ollama (https://ollama.com); the optional cloud LLM is the Anthropic API.
+#
+# Retrieval, embeddings, LLM back-ends and citation checking are reused from Project 3
+# (github.com/soumics/llm-rag-assistant), installed as a package pinned to an exact commit:
+rag-assistant @ https://github.com/soumics/llm-rag-assistant/archive/109044d264f03362c19096d5810b1d536b0ac922.zip
+pypdf==6.19.0
+numpy==2.5.3
+faiss-cpu==1.15.1
+requests==2.34.2
+PyYAML==6.0.3
+anthropic==1.8.0
+gradio==6.28.0
+pillow==12.3.0
+pytest==9.1.1
